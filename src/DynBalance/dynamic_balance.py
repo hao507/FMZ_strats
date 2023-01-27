@@ -8,9 +8,7 @@
 
 
 import time
-
-def logger(*args, **kwargs):
-    Log(*args, **kwargs)
+from tools import *
 
 class TradeClass:
     def __init__(self, currrent_exchange):
@@ -95,6 +93,7 @@ class TradeClass:
         
         return 'update_data_finish!'
 
+
 class DynamicBalance:
     def __init__(self, trade_class):
         self.platform = trade_class
@@ -123,7 +122,7 @@ class DynamicBalance:
             self.platform.create_order("sell", self.platform.high, self.need_sell_amount)
             self.sell_count += 1
         
-        logger("Buy_Times: ", self.buy_count, "Sell_Times: ", self.sell_count)
+        Log("Buy_Times: ", self.buy_count, "Sell_Times: ", self.sell_count)
     
     def if_need_trade(self, condition, time_diff, price_diff, spread):
         if condition == "time":
@@ -139,7 +138,7 @@ class DynamicBalance:
 
 def main():
     test = TradeClass(exchange)
-    logger(test.update_data())
+    Log(test.update_data())
     test_trade = DynamicBalance(test)
 
     while True:

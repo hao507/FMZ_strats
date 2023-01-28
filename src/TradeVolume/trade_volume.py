@@ -1,4 +1,3 @@
-# fmz@7a4d2c94c3060dd459a73b92edec62ba
 # -*- encoding: utf-8 -*-
 '''
 @File    :   trade_volume.py
